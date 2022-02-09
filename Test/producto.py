@@ -37,7 +37,7 @@ class Producto(unittest.TestCase):
         productoPage.clickProduct()
         productoPage.clickAddToCart()
         productoPage.clickAddToCartConfirmation()
-        assert productoPage.checkProductValidation() == 'iPhone 12 64GB -Negro-'
+        assert productoPage.checkProductValidation().strip().lower() == ('IPhone 12 64GB -Negro-').strip().lower()
 
     def test_eliminarProductoCarrito(self):
         driver = self.driver

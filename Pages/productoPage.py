@@ -16,7 +16,7 @@ class ProductoPage:
         self.driver.find_element(By.XPATH, Locators.product_addToCartConfirmation_XPATH).click()
 
     def checkProductValidation(self):
-        self.driver.find_element(By.XPATH, Locators.cart_productoVerificado_XPATH).text
+        return self.driver.find_element(By.XPATH, Locators.cart_productoVerificado_XPATH).text
 
     def eliminarProdcutoCarrito(self):
         self.driver.find_element(By.XPATH, Locators.cart_eliminarProducto_XPATH).click()
