@@ -3,6 +3,8 @@ from selenium.webdriver.chrome import webdriver
 from selenium import webdriver
 import unittest
 
+from webdriver_manager.chrome import ChromeDriverManager
+
 from Pages.homePage import HomePage
 from Pages.productoPage import ProductoPage
 
@@ -10,7 +12,7 @@ class Producto(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Chrome(executable_path="C:/Users/Diego Linares/PycharmProjects/POM/POMProject/drivers/chromedriver.exe")
+        cls.driver  = webdriver.Chrome(executable_path=ChromeDriverManager().install())
         cls.driver.implicitly_wait(10)
         cls.driver.maximize_window()
 
